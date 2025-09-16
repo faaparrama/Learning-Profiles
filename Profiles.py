@@ -346,12 +346,12 @@ st.divider()
 st.header("💭 Reflection Prompts")
 reflect_col1, reflect_col2 = st.columns(2)
 with reflect_col1:
-    key_insights_reflection = st.text_area("Reflection on Key Insights", height=150)
-    teaching_strategies_reflection = st.text_area("Reflection on Teaching Strategies", height=150)
+    key_insights_reflection = st.text_area("Reflection on Key Insights: What Does this mean in your subject?", height=150)
+    teaching_strategies_reflection = st.text_area("Reflection on Teaching Strategies: What specific activities or tasks would you use in your class?", height=150)
 
 with reflect_col2:
-    sel_focus_reflection = st.text_area("Reflection on SEL Focus", height=150)
-    foundational_domains_reflection = st.text_area("Reflection on Foundational Domains", height=150)
+    sel_focus_reflection = st.text_area("Reflection on SEL Focus: How would you promote personal growth and harmony in your classroom?", height=150)
+    foundational_domains_reflection = st.text_area("Reflection on Foundational Domains: What would you do to advance this learners knowledge to the next stage?", height=150)
 
 st.divider()
 
