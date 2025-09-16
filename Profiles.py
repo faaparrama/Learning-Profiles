@@ -4,6 +4,11 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import io
 import datetime # Added for timestamping
+import threading # IMPORTED: To handle simultaneous user submissions
+
+# --- GLOBAL LOCK for thread-safe Google Sheets writing ---
+# This ensures that only one user can write to the sheet at a time, preventing race conditions.
+_lock = threading.Lock()
 
 # ------------------------------
 # APP CONFIGURATION & CONSTANTS
@@ -367,7 +372,9 @@ with action_col1:
                     [key_insights_reflection, sel_focus_reflection, 
                     teaching_strategies_reflection, foundational_domains_reflection]
                 
-                sheet.append_row(new_row)
+                 # UPDATED: The sheet writing operation is now wrapped in the lock.
+                with _lock:
+                    sheet.append_row(new_row)
                 st.success("✅ Your responses have been recorded!")
             except Exception as e:
                 st.error(f"❌ Failed to submit to Google Sheets: {str(e)}")
