@@ -24,7 +24,7 @@ CATEGORICAL_VARS = ['identity', 'moral', 'cognitive', 'priorAch']
 ALL_VARS = SLIDER_VARS + CATEGORICAL_VARS
 
 # --- Google Sheets Configuration ---
-SHEET_ID = "10_sWE8lMirDYsBgo_qCs9v3cJTFycQVKiqVSWtbvbLQ" # Your Sheet ID
+SHEET_ID = "18rQex9dBZVa62XZWX7L6ZohLKmpb4dYbmA3wU7KCk5E" # Your Sheet ID
 
 # ------------------------------
 # DATA DICTIONARIES (Definitions, Mappings, etc.)
